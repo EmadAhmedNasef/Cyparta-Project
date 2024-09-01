@@ -10,6 +10,7 @@ import {
 import React, { useContext } from "react";
 import Cookies from "js-cookie";
 import { UserContext } from "../_Context/userContext";
+import { toast, ToastContainer } from "react-toastify";
 
 export default function LinksNav() {
   const path = usePathname();
@@ -21,7 +22,19 @@ export default function LinksNav() {
     localStorage.removeItem("profile");
     setProfile(null);
     setToken(null);
-    router.push("/login");
+    toast.success("you logged out successfully", {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+    setTimeout(() => {
+      router.push("/login");
+    }, 3000);
   };
 
   return (
@@ -61,6 +74,18 @@ export default function LinksNav() {
           </Link>
         </li>
       )}
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </ul>
   );
 }

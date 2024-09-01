@@ -13,6 +13,22 @@ pnpm dev
 # or
 bun dev
 ```
+Project Name
+Login and Profile Management System
+
+Description
+This project is a simple login and profile management system. Users are required to log in with a valid email and password. Upon successful authentication, they are redirected to their profile page, where they can view and update their personal information. Middleware is implemented to ensure that only authenticated users can access the profile page.
+
+Features
+User Authentication: Secure login system requiring a valid email and password.
+Profile Management: View and update user information on the profile page.
+Access Control: Middleware to restrict access to the profile page for unauthenticated users.
+
+Usage
+1- Navigate to the Login Page: Enter a valid email and password to log in.
+2- Access the Profile Page: After logging in, you will be redirected to your profile page.
+Here you can view your personal information and make any necessary updates.
+3- Middleware Protection: Attempting to access the profile page without logging in will redirect you to the login page.
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
